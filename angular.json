@@ -170,7 +170,7 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "cypress/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -178,20 +178,39 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "detektiv-kollektiv:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "detektiv-kollektiv:serve:production"
+            }
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
             "devServerTarget": "detektiv-kollektiv:serve"
           },
           "configurations": {
             "production": {
               "devServerTarget": "detektiv-kollektiv:serve:production"
-            },
-            "qa": {
-              "devServerTarget": "detektiv-kollektiv:serve:qa"
-            },
-            "dev": {
-              "devServerTarget": "detektiv-kollektiv:serve:dev"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "detektiv-kollektiv:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "detektiv-kollektiv:serve:production"
             }
           }
         }

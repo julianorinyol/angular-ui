@@ -2,6 +2,8 @@
   "name": "detektiv-kollektiv",
   "version": "0.0.0",
   "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -12,6 +14,7 @@
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "e2e:headless": "ng e2e --headless",
     "compodoc": "npx compodoc -p tsconfig.json -d dist/documentation"
   },
   "private": true,
@@ -48,11 +51,14 @@
     "@angular/cli": "^9.1.5",
     "@angular/compiler-cli": "^9.1.6",
     "@angular/language-service": "^9.1.6",
+    "@briebug/cypress-schematic": "^4.3.0",
     "@compodoc/compodoc": "^1.1.11",
+    "@cypress/webpack-preprocessor": "5.4.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.38",
     "codelyzer": "^5.1.2",
+    "cypress": "5.6.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^5.0.5",
@@ -61,8 +67,8 @@
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "ng-packagr": "^9.0.0",
-    "protractor": "^7.0.0",
-    "ts-node": "~8.3.0",
+    "ts-loader": "8.0.11",
+     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
   }
