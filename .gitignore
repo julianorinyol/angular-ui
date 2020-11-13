@@ -63,3 +63,4 @@ amplifyxc.config
 
 
 package-lock.json
+cypress/videos/**
