@@ -8,10 +8,10 @@
     <nav class="main-nav">
       <ul class="main-nav-list">
         <li *ngIf="!authState.isLoggedIn">
-          <button (click)="signUp()" class="button-flat">Detektiv*in werden</button>
+          <button (click)="signUp()" class="button-outline-gray">Detektiv*in werden</button>
         </li>
         <li *ngIf="!authState.isLoggedIn">
-          <button (click)="login()" class="button-outline">Einloggen</button>
+          <button (click)="login()" class="button-outline-yellow">Einloggen</button>
         </li>
         <div *ngIf="userLoaded">
           <button class="button-primary">
