@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action, NgxsOnInit, Selector, State, StateContext } from '@ngxs/store';
-import { finalize, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { ArchiveService } from '../services/archive.service';
 import {
   AddFilterKeyword,
@@ -15,8 +15,6 @@ import {
 } from './archive.actions';
 import { ArchiveStateModel } from './archive.state.model';
 import { patch, append, removeItem } from '@ngxs/store/operators';
-import { LoaderService } from 'src/app/shared/loader/service/loader.service';
-import { UserService } from 'src/app/core/services/user/user.service';
 
 @State<ArchiveStateModel>({
   name: 'archive',
@@ -31,11 +29,7 @@ import { UserService } from 'src/app/core/services/user/user.service';
 })
 @Injectable()
 export class ArchiveState implements NgxsOnInit {
-  constructor(
-    private archiveService: ArchiveService,
-    private loaderService: LoaderService,
-    private userService: UserService
-  ) {}
+  constructor(private archiveService: ArchiveService) {}
 
   @Selector()
   static items(state: ArchiveStateModel) {
@@ -180,10 +174,6 @@ export class ArchiveState implements NgxsOnInit {
   }
 
   ngxsOnInit(ctx?: StateContext<any>) {
-    this.userService.user$.subscribe((user) => {
-      if (user) {
-        ctx.dispatch(new FetchAllItems());
-      }
-    });
+    ctx.dispatch(new FetchAllItems());
   }
 }
