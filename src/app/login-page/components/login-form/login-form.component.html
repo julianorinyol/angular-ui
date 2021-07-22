@@ -6,19 +6,21 @@
       </mat-error>
       <mat-form-field class="full-width-input">
         <input matInput #username placeholder="Email Addresse oder Nutzername" formControlName="username" required>
+        <mat-icon class="icon-help">help_outline</mat-icon>       
         <mat-error>
           Bitte gib hier deinen Benutzernamen ein.
         </mat-error>
       </mat-form-field>
       <mat-form-field class="full-width-input">
         <input matInput type="password" placeholder="Passwort" formControlName="password" required>
+        <mat-icon class="icon-help">help_outline</mat-icon>     
         <mat-error>
           Bitte gib hier dein Passwort ein.
         </mat-error>
       </mat-form-field>
     </div>
     <div>
-      <button class="button button--neon-blue" (click)="onLoginSubmit()">Einloggen</button>
+      <button class="button button--neon-blue" (click)="onLoginSubmit()"><mat-icon class="icon-help-btn">help_outline</mat-icon> Einloggen</button>
       <button class="button-flat" type="button" (click)="forgotPassword()">Passwort vergessen</button>
     </div>
   </mat-card-content>

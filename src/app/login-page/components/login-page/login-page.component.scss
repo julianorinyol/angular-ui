@@ -80,9 +80,16 @@ span.tm {
         color: #ffffff;
         border: solid 2px #ffffff;
     }
+    h1 {
+        color: #000;
+        line-height: 40px;
+    }
 
 }
-
+.unsere_partner_section h1{
+    color: #000;
+    line-height: 40px;
+}
 .unsere_partner_section {
     display: flex;
     flex-direction: column;
@@ -93,6 +100,7 @@ span.tm {
 .wrapper:after {content: '';clear: both;display: block;}
 .case-list-container h3 {
     padding-left: 20px;
+    width: 100%;
 }
 
 .social_image {
@@ -116,7 +124,7 @@ span.tm {
 @media only screen and (min-width: 1024px) {
     .wrapper {
         flex-direction: row;
-        width: 900px;
+        width: 1000px;
     }
 
     .hero-section {
