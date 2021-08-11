@@ -33,7 +33,7 @@ export class QuestionComponent implements OnInit {
   }
 
   change(e) {
-    this.childQuestions = []
+    this.childQuestions = [];
     if (this.question.max_children > 0) {
       this.questions.forEach(question => {
         if (question.parent_question_id === this.question.question_id && question.lower_bound < e.value && question.upper_bound > e.value) {
@@ -43,7 +43,7 @@ export class QuestionComponent implements OnInit {
     }
 
     if (this.childQuestions.length > 0) {
-      this.isShowChild = true
+      this.isShowChild = true;
     }
   }
 }
